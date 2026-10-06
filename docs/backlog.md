@@ -3,7 +3,7 @@ UI language: German
 # Backlog
 
 ## D-01 · Must · A customer books a wash appointment online
-Status: open
+Status: not-yet
 - [ ] On the booking page the customer can pick a wash programme from a list
 - [ ] The customer enters date, time, their name and their licence plate
 - [ ] After submitting, a confirmation shows the programme, the date and the time
