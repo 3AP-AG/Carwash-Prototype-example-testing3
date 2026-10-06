@@ -1,0 +1,2 @@
+-- Reference entity `example`. New features take the next free V<n>__<feature>.sql.
+-- TODO(b): table example (id uuid pk, title, status, description, created_at, updated_at).

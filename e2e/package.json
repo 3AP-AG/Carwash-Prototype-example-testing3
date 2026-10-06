@@ -1,0 +1,7 @@
+{
+  "name": "prototype-e2e",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@TODO",
+  "//": "Run through make e2e only. TODO(b): devDependency @playwright/test"
+}

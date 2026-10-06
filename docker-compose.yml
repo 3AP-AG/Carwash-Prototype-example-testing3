@@ -1,0 +1,11 @@
+# Local dev only: Postgres for `make dev`. Tests use Testcontainers instead.
+# TODO(b): pin the Postgres version to the Cloud SQL version.
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: prototype
+      POSTGRES_USER: prototype
+      POSTGRES_PASSWORD: prototype
+    ports:
+      - "5432:5432"

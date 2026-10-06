@@ -1,0 +1,11 @@
+{
+  "//": "Gate: typecheck. Locked, self-contained: does NOT extend frontend/tsconfig.json. Run as tsc -p config/gates/tsconfig.gate.json --noEmit. TODO(b): jsx, module/moduleResolution for Vite, lib, types, paths @/* → frontend/src/*.",
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "noEmit": true
+  },
+  "include": ["../../frontend/src"]
+}

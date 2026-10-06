@@ -1,0 +1,4 @@
+# Local profile (`make dev`). Still protected: login mode with a seeded local user.
+# TODO(b): datasource for docker-compose Postgres; Flyway enabled locally with db/local added.
+prototype:
+  protection-mode: login

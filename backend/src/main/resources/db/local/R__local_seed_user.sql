@@ -1,0 +1,2 @@
+-- Local profile only: a permanent local login user. Never shipped to a deployed prototype.
+-- TODO(b): insert into app_user (… '{bcrypt}…' …).

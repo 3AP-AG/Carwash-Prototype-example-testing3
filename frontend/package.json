@@ -1,0 +1,12 @@
+{
+  "name": "prototype-frontend",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@TODO",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "api:generate": "orval --config orval.config.ts"
+  },
+  "//": "Gates run only through make (lint, typecheck, test), against config/gates/. TODO(b): dependencies — react 19, react-router 7, @tanstack/react-query, react-hook-form, zod; dev: vite, typescript, vitest, @testing-library/react, msw, orval, eslint, typescript-eslint, prettier, style-dictionary"
+}

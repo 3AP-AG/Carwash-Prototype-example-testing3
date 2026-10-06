@@ -1,0 +1,28 @@
+# Path check: locked paths (CAAS-1382) and earlier backlog items' assertions (CAAS-1390). Locked (config/gates/locked-paths.txt).
+#
+# Runs on pull_request_target, so GitHub takes this file from main, never from the PR's branch:
+# a PR cannot weaken the check that judges it. It only reads the PR's changed-file list through the
+# API and never checks out PR code, which keeps pull_request_target safe.
+# Required status check through .github/rulesets/main.json (applied by the IT runbook).
+name: path-check
+
+# Manual-only while the template is a skeleton (the step is a stub that exits 1).
+# TODO(b): restore the real trigger once the check works:
+#   on:
+#     pull_request_target:
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  path-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      # TODO(b): changed files via the API (gh pr view / pulls.listFiles); never actions/checkout of the PR head
+      # TODO(b): fail if any file matches config/gates/locked-paths.txt, read from main
+      # TODO(b): fail if any e2e/backlog/<ID>.spec.ts other than the item in flight changes
+      - run: 'echo "TODO(b): path check" && exit 1'

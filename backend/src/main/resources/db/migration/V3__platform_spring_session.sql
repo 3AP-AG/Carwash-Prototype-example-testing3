@@ -1,0 +1,2 @@
+-- Spring Session JDBC tables, created by migration, not at startup.
+-- TODO(b): copy schema-postgresql.sql from the Spring Session version in use.
