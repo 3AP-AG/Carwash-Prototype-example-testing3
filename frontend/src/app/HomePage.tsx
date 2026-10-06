@@ -1,7 +1,11 @@
-// The start page until the prototype's first backlog item replaces it. Deliberately empty: the
-// Example exemplar is never linked from here or any navigation.
-import { PageTitle } from '@/ui';
+// The start page of the prototype: what a visitor can do here.
+import { Button, PageTitle } from '@/ui';
 
 export function HomePage() {
-  return <PageTitle>Prototype</PageTitle>;
+  return (
+    <section>
+      <PageTitle>Autowaschanlage</PageTitle>
+      <Button to="/bookings/new">Waschtermin buchen</Button>
+    </section>
+  );
 }

@@ -1,8 +1,9 @@
-// ui/input: a single-line text field. Pass {...register('name')} from React Hook Form.
-import { FormField, type FieldProps } from './form-field';
+// ui/input: a single-line field, including the date and time pickers. Pass {...register('name')}
+// from React Hook Form.
+import { FormField, type FieldProps, type FieldType } from './form-field';
 
 export interface InputProps extends FieldProps {
-  type?: 'text' | 'email' | 'number' | 'password' | 'search';
+  type?: FieldType;
 }
 
 export function Input(props: InputProps) {

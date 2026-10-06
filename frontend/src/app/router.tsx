@@ -2,12 +2,13 @@
 // The gate (/gate) is not a route: Spring serves it outside this bundle.
 import { createBrowserRouter } from 'react-router';
 import { HomePage } from '@/app/HomePage';
+import { bookingRoutes } from '@/features/bookings/routes';
 import { exampleRoutes } from '@/features/examples/routes';
 import { PageLayout } from '@/ui';
 
 export const router = createBrowserRouter([
   {
     element: <PageLayout />,
-    children: [{ index: true, element: <HomePage /> }, ...exampleRoutes],
+    children: [{ index: true, element: <HomePage /> }, ...bookingRoutes, ...exampleRoutes],
   },
 ]);

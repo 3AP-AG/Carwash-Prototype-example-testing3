@@ -7,6 +7,9 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import type { ChangeEventHandler, FocusEventHandler, FormEventHandler, ReactNode, Ref } from 'react';
 
+/** `date` and `time` use the browser's own pickers and exchange "YYYY-MM-DD" / "HH:mm". */
+export type FieldType = 'text' | 'email' | 'number' | 'password' | 'search' | 'date' | 'time';
+
 export interface FieldProps {
   label: string;
   name: string;
@@ -20,7 +23,7 @@ export interface FieldProps {
 }
 
 interface FormFieldProps extends FieldProps {
-  type?: 'text' | 'email' | 'number' | 'password' | 'search';
+  type?: FieldType;
   multiline?: boolean;
   minRows?: number;
   children?: ReactNode;
@@ -43,6 +46,8 @@ export function FormField({
   children,
 }: FormFieldProps) {
   const select = children !== undefined;
+  // A date or time field always shows its format, so its label must not sit on top of it.
+  const shrinkLabel = select || type === 'date' || type === 'time';
   return (
     <TextField
       id={name}
@@ -59,7 +64,10 @@ export function FormField({
       multiline={multiline}
       minRows={minRows}
       select={select}
-      slotProps={select ? { select: { native: true }, inputLabel: { shrink: true } } : undefined}
+      slotProps={{
+        ...(select && { select: { native: true } }),
+        ...(shrinkLabel && { inputLabel: { shrink: true } }),
+      }}
       fullWidth
     >
       {children}

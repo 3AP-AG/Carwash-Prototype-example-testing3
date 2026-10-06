@@ -19,3 +19,13 @@ insert into example (id, title, status, description, created_at, updated_at) val
   ('00000000-0000-0000-0000-00000000e003', 'Example three', 'CLOSED', '',
    now() - interval '1 day', now() - interval '1 day')
 on conflict (id) do nothing;
+
+insert into booking (id, wash_programme, appointment_date, appointment_time, customer_name,
+                     licence_plate, created_at) values
+  ('00000000-0000-0000-0000-00000000b001', 'BASIC', current_date + 1, '09:00', 'Anna Keller',
+   'ZH 123456', now() - interval '2 days'),
+  ('00000000-0000-0000-0000-00000000b002', 'PREMIUM', current_date + 1, '14:30', 'Bruno Meier',
+   'BE 987654', now() - interval '1 day'),
+  ('00000000-0000-0000-0000-00000000b003', 'COMFORT', current_date + 3, '11:15', 'Carla Rossi',
+   'LU 456789', now())
+on conflict (id) do nothing;

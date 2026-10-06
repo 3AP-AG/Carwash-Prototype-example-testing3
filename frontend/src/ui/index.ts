@@ -14,7 +14,7 @@ export type { EmptyStateProps } from './empty-state';
 export { ErrorState } from './error-state';
 export type { ErrorStateProps } from './error-state';
 export { Form } from './form-field';
-export type { FieldProps, FormProps } from './form-field';
+export type { FieldProps, FieldType, FormProps } from './form-field';
 export { Input } from './input';
 export type { InputProps } from './input';
 export { Link } from './link';
